@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Paul Stefko" />
+  <meta name="dcterms.date" content="2023-06-06" />
+  <meta name="description" content="A Mosaic Strict central resolution mechanic for tabletop RPGs that relies only on the group’s understanding of a character’s fictional qualities." />
+  <title>What Are the Chances?</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">What Are the Chances?</h1>
+<p class="author">Paul Stefko</p>
+<p class="date">2023-06-06</p>
+</header>
+<p>This document presents a central resolution mechanic for tabletop
+RPGs. It is <em>not</em> a complete game in itself. In fact, it conforms
+to the <a
+href="http://blog.trilemma.com/2021/02/nothing-at-bottom-mosaic-strict-rpg.html">Mosaic
+Strict</a> design principle: it does not rely on any mechanic or
+quantified state of any other game text, and it assumes no other rules
+are in use other than free role play. Its compatibility with any other
+set of mechanics is <em>not</em> guaranteed.</p>
+<p>The human-readble text below is licensed under the Creative Commons
+Attribution 4.0 International License. To view a copy of this license,
+visit <a href="http://creativecommons.org/licenses/by/4.0/"
+class="uri">http://creativecommons.org/licenses/by/4.0/</a>.</p>
+<p><a href="http://creativecommons.org/licenses/by/4.0/"><img
+src="https://i.creativecommons.org/l/by/4.0/80x15.png" title="CC-BY 4.0"
+alt="Creative Commons License" /></a></p>
+<h2 id="what-do-i-do">What Do I Do?</h2>
+<p>When you want to try something where the outcome is both
+<em>interesting</em> and <em>uncertain</em>, ask the table, “What are
+the chances my character can do this?” Together, settle on one of the
+following:</p>
+<ul>
+<li><em>Poor</em>: You’ll probably fail. If you still try, <strong>check
+2</strong>.</li>
+<li><em>Even</em>: You could fail. You could succeed. If you try,
+<strong>check 3</strong>.</li>
+<li><em>Fair</em>: You’re more likely to succeed than to fail. If you
+try, <strong>check 4</strong>.</li>
+<li><em>Great</em>: You’re very likely to succeed. If you try,
+<strong>check 5</strong>.</li>
+</ul>
+<h2 id="what-does-check-mean">What Does “Check” Mean?</h2>
+<p>You need a way to determine binary pass/fail states in sequence. This
+can be flipping coins, rolling a die and looking for evens or odds, etc.
+Whenever you check, decide which result counts as a
+<strong>pass</strong>. (For example, I would default to heads/evens
+being passes.)</p>
+<p>“Check N” means you’re going to use (up to) N of these. Always start
+by checking 2. If they’re both passes, you succeed! If not, check 1 at a
+time until you get 2 passes or you’ve checked a total of N, whichever
+comes first. If you check all N and haven’t gotten 2 passes, you don’t
+succeed.</p>
+<h3 id="what-are-the-actual-odds">What Are the Actual Odds?</h3>
+<p>For “Check N,” look up N on the following table. The percent chance
+has been rounded slightly, to be nice.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">25%</td>
+<td style="text-align: center;">50%</td>
+<td style="text-align: center;">69%</td>
+<td style="text-align: center;">81%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-are-degrees-of-success">What Are Degrees of Success?</h2>
+<p>Whenever you check, stop after getting 2 passes. If you had to check
+all N times, you earn a <strong>weak success</strong>: you achieved your
+started goal, but there was some cost, consequence, etc. If you got 2
+passes before you checked all N, you earn a <strong>strong
+success</strong>: you succeed fully, earning your goal without much
+lasting trouble.</p>
+<p>If you check all N and haven’t gotten 2 passes, you earn a
+<strong>miss</strong>. Depending on the action, there may be additional
+consequences for failure.</p>
+<h2 id="how-can-i-use-this">How Can I Use This?</h2>
+<p>You can substitute these rules for the resolution procedure for
+another RPG. The only requirement is that you and your group have a
+relatively clear understanding of your character’s abilities, strengths,
+weaknesses, and other qualities, as well as of the genre and setting you
+are playing in.</p>
+<p>This mechanic can also serve well for solo play, as long as you are
+honest with yourself about your character’s chances. You can even use it
+as an <strong>oracle</strong> to determine outcomes of external events
+(in the absence of a player referee). Just decide how likely the outcome
+is, then check as described above.</p>
+<hr />
+<p><img src="./chances-1.svg" /></p>
+<!-- Links & References -->
+</body>
+</html>
