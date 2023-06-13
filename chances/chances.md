@@ -77,7 +77,7 @@ decide how likely the outcome is, then check as described above.
 
 ---
 
-![](./chances-1.svg)
+![Process diagram](./chances-1.svg)
 
 <!-- Links & References -->
 
